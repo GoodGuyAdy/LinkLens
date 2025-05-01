@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "Models",
 ]
 
 MIDDLEWARE = [
@@ -91,3 +92,9 @@ STATIC_URL = "static/"
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CURRENT_GRAPH_DB_PROVIDER = "Neo4J"
+
+NEO4J_URL = "localhost:7687"
+NEO4J_USER = "neo4j"
+NEO4J_PASSWORD = "password"
