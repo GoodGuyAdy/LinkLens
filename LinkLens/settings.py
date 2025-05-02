@@ -34,6 +34,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "LinkLens.middleware.LogstashLoggingMiddleware",
 ]
 
 ROOT_URLCONF = "LinkLens.urls"
@@ -95,9 +96,41 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+
 CURRENT_GRAPH_DB_PROVIDER = GraphDBProvider.neo4j
 CURRENT_LLM_PROVIDER = LLMProvider.ai21
+
 
 NEO4J_URL = "localhost:7687"
 NEO4J_USER = "neo4j"
 NEO4J_PASSWORD = "password"
+
+
+ELASTIC_HOST = "localhost"
+ELASTIC_PORT = 9200
+
+
+LOG_ALL_REQUESTS = True
+LOGSTASH_HOST = "localhost"
+LOGSTASH_PORT = 5000
+
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "logstash": {
+            "level": "INFO",
+            "class": "logstash.TCPLogstashHandler",
+            "host": LOGSTASH_HOST,
+            "port": LOGSTASH_PORT,
+        },
+    },
+    "loggers": {
+        "api_logger": {
+            "handlers": ["logstash"],
+            "level": "INFO",
+            "propagate": False,
+        },
+    },
+}
