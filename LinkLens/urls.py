@@ -11,4 +11,6 @@ urlpatterns = [
     path(PROJECT_URL_PREFIX, include("Backend.URLs.User")),
     path(PROJECT_URL_PREFIX, include("Backend.URLs.Entity")),
     path(PROJECT_URL_PREFIX, include("Backend.URLs.Event")),
+    path(PROJECT_URL_PREFIX, include("Backend.URLs.Suggestions")),
+    path(PROJECT_URL_PREFIX, include("Backend.URLs.Chat")),
 ]

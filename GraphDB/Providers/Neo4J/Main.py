@@ -6,6 +6,7 @@ from .Operations.Post.User import create_or_update_user_node
 from .Operations.Post.Event import register_event_relation
 from .Operations.Delete.Entity import delete_entity_node
 from .Operations.Delete.User import delete_user_node
+from .Operations.Get.Query import run_query
 from LinkLens.settings import NEO4J_URL, NEO4J_USER, NEO4J_PASSWORD
 
 
@@ -23,9 +24,9 @@ class Neo4JGraphDB(BaseGraphDBProvider):
         """Syncs all the data in primary storage in Graph DB"""
         pass
 
-    def run_query(self):
+    def run_query(self, query):
         """Runs query in Graph DB and returns the data"""
-        pass
+        return run_query(query)
 
     def get_database_schema(self):
         """Returns the database schema"""

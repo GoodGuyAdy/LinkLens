@@ -15,9 +15,9 @@ class GraphDBServiceClass(BaseGraphServiceClass):
         """Syncs all the data in primary storage in Graph DB"""
         pass
 
-    def run_query(self):
+    def run_query(self, query):
         """Runs query in Graph DB and returns the data"""
-        pass
+        return self.provider_object.run_query(query)
 
     def get_database_schema(self):
         """Returns the database schema"""

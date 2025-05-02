@@ -3,6 +3,8 @@ Django settings for LinkLens project.
 """
 
 from pathlib import Path
+from Constants.LLM import LLMProvider
+from Constants.GraphDB import GraphDBProvider
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -93,7 +95,8 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CURRENT_GRAPH_DB_PROVIDER = "Neo4J"
+CURRENT_GRAPH_DB_PROVIDER = GraphDBProvider.neo4j
+CURRENT_LLM_PROVIDER = LLMProvider.ai21
 
 NEO4J_URL = "localhost:7687"
 NEO4J_USER = "neo4j"
