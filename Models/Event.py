@@ -9,7 +9,7 @@ class Event(models.Model):
         LIKED = "liked", "liked"
         DISLIKED = "disliked", "disliked"
         FOLLOWED = "followed", "followed"
-        BLOCKED = "blocked", "blocked"
+        LOVED = "loved", "loved"
 
     event_id = models.BigAutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)

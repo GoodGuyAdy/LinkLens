@@ -1,12 +1,18 @@
-from GraphDB.Providers.Neo4J.NeoModels.Entity import EntityNode
+from neomodel import db
 
 
 def delete_entity_node(entity_obj):
-    """Deletes an Entity type node from Neo4j by entity_id"""
-    entity_node_obj = EntityNode.nodes.get_or_none(entity_id=entity_obj.entity_id)
+    """
+    Dynamically deletes an entity node based on entity_type and entity_id
+    """
+    entity_id = entity_obj.entity_id
+    entity_type = entity_obj.entity_type
 
-    if entity_node_obj:
-        entity_node_obj.delete()
-        return True
-    else:
-        return False
+    model_name = f"{entity_type}"
+
+    cypher_query = f"""
+        MATCH (n:{model_name} {{entity_id: '{entity_id}'}})
+        DETACH DELETE n
+    """
+
+    db.cypher_query(cypher_query)
