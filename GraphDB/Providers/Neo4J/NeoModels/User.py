@@ -22,4 +22,4 @@ class UserNode(StructuredNode):
     viewed = RelationshipTo("EntityNode", "VIEWED", model=InteractionRel)
     followed = RelationshipTo("EntityNode", "FOLLOWED", model=InteractionRel)
     blocked = RelationshipTo("EntityNode", "BLOCKED", model=InteractionRel)
-    hated = RelationshipTo("EntityNode", "HATED", model=InteractionRel)
+    disliked = RelationshipTo("EntityNode", "DISLIKED", model=InteractionRel)

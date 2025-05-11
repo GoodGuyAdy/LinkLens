@@ -7,7 +7,7 @@ class Event(models.Model):
     class EventType(models.TextChoices):
         VIEWED = "viewed", "viewed"
         LIKED = "liked", "liked"
-        HATED = "hated", "hated"
+        DISLIKED = "disliked", "disliked"
         FOLLOWED = "followed", "followed"
         BLOCKED = "blocked", "blocked"
 

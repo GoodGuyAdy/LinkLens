@@ -12,8 +12,8 @@ def register_event_relation(event_obj):
         user_node.liked.connect(entity_node)
     elif event_obj.event_type == Event.EventType.VIEWED:
         user_node.viewed.connect(entity_node)
-    elif event_obj.event_type == Event.EventType.HATED:
-        user_node.hated.connect(entity_node)
+    elif event_obj.event_type == Event.EventType.DISLIKED:
+        user_node.disliked.connect(entity_node)
     elif event_obj.event_type == Event.EventType.FOLLOWED:
         user_node.followed.connect(entity_node)
     elif event_obj.event_type == Event.EventType.BLOCKED:

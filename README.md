@@ -3,7 +3,7 @@
 > **Graph-Augmented GenAI for Personalized Suggestions and Smart QA**
 
 **LinkLens** is a GenAI system that models user-entity interactions as a graph, enabling intelligent suggestions and natural language question answering using LLMs.  
-Built with Django, Neo4j, and LangChain, it turns raw interaction events (like, hate, follow, etc.) into meaningful knowledge and context-aware recommendations.
+Built with Django, Neo4j, and LangChain, it turns raw interaction events (like, dislike, follow, etc.) into meaningful knowledge and context-aware recommendations.
 
 ---
 
