@@ -15,7 +15,7 @@ For an easier experience with the API, you can explore my Postman collection.
 ### 📌 Key Features
 
 - 🧠 **Graph-Powered AI Reasoning** — Every user interaction is stored as a relationship in Neo4j.
-- 💬 **Smart Chat API** — Ask natural language questions like _"What movie does John like?"_
+- 💬 **Smart Chat API** — Ask natural language questions like _"What courses are popular among users who liked The Great Gatsby?"_ or _"What are some common interests among users who viewed Tesla Model 3?"_
 - 🎯 **Suggestion Engine** — Recommend relevant entities for a user using real-time graph traversal + LLMs.
 - 👤 **Full CRUD APIs** — Create, update, and delete users, entities, and their interaction events.
 - 📊 **Real-Time Logging** — Integrated with Logstash, Elasticsearch, and Kibana.
