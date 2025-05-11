@@ -17,7 +17,7 @@ def get_ai_suggestion(username, entity_type):
     """
 
     graph_db_query = f"""
-        MATCH (user:UserNode {{username: '{username}'}})-[edge]->(entity:EntityNode {{entity_type: '{entity_type}'}})
+        MATCH (user:UserNode {{username: '{username}'}})-[edge]->(entity:{entity_type})
         RETURN user, edge, entity
     """
 
